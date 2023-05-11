@@ -20,6 +20,12 @@ namespace EntityLayer.Concrete
 
         public bool CategoryStatus { get; set; }
 
-        public int MyProperty { get; set; }
+        public List<Blog> Blogs { get; set; }
+
+
+
+
+
+
     }
 }
