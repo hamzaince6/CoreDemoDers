@@ -41,7 +41,22 @@
                                 <h5 class="card-title">
                                     <a href="single.html">@item.BlogTitle</a>
                                 </h5>
-                                <p class="card-text mb-3">@item.BlogContent.Substring(0,100) </p>
+                                <p class="card-text mb-3"><p>
+
+                                        @if (item.BlogContent != null && item.BlogContent.Length > 100)
+                                        {
+                                            int lastSpaceIndex = item.BlogContent.Substring(0, 100).LastIndexOf(" ");
+                                            string truncatedContent = lastSpaceIndex >= 0 ? item.BlogContent.Substring(0, lastSpaceIndex) : item.BlogContent.Substring(0, 100);
+                                    <p class="card-text mb-3">@truncatedContent...</p>
+                                        }
+                                        else
+                                        {
+                                    <p class="card-text mb-3">@item.BlogContent</p>
+                                        }
+
+
+                                </p>
+                              
                                 <a href="single.html" class="btn btn-primary read-m">Devamını Oku</a>
                             </div>
                         </div>
